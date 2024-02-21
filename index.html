@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인</h4>
+            <form action="success.html">
+                <div class="my-3">
+                  <input type="text" class="form-control" id="id">
+                 </div>
+                 <div class="my-3">
+                   <input type="password" class="form-control" id="password">
+                 </div>
+                 <button id="submit" type="submit" class="btn btn-primary">전송</button>
+                 <button type="button" class="btn btn-danger" id="close">닫기</button>
+              </form> 
+        </div>
+      </div>
+
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <span class="navbar-brand">Navbar</span>
@@ -17,7 +33,7 @@
         </div>
       </nav> 
 
-      <ul class="list-group display-none">
+      <ul class="list-group">
         <li class="list-group-item">An item</li>
         <li class="list-group-item">A second item</li>
         <li class="list-group-item">A third item</li>
@@ -25,9 +41,32 @@
         <li class="list-group-item">And a fifth one</li>
       </ul> 
 
-      <div class="black-bg">
-        <div class="white-bg"></div>
+      
+      <div class="main-bg">
+        <h4>타입스크립트 장인 되기</h4>
+        <button id="login" class="btn btn-primary">입장</button>
       </div>
+
+      <div style="overflow: hidden">
+        <div class="slide-container">
+          <div class="slide-box">
+            <img src="/image/car1.png">
+          </div>
+          <div class="slide-box">
+            <img src="/image/car2.png">
+          </div>
+          <div class="slide-box">
+            <img src="/image/car3.png">
+          </div>
+        </div>
+     </div> 
+     
+     <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary" id="btn1">Left</button>
+        <button type="button" class="btn btn-primary" id="btn2">Middle</button>
+        <button type="button" class="btn btn-primary" id="btn3">Right</button>
+      </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>

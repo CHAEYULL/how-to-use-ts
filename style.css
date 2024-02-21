@@ -4,3 +4,48 @@
 .display-block {
     display : block;
 }
+.main-bg {
+    padding: 100px 20px;
+    background: lightgrey;
+  }
+.list-group{
+    overflow: hidden;
+    height: 0px;
+    transition: all 0.5s;
+}
+.list-group-ani {
+    height: 200px;
+}
+.black-bg {
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.5);
+    z-index : 5;
+    padding: 30px;
+    visibility : hidden;
+    opacity : 0;
+    transition: all 1s;
+  }
+
+  .white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+  } 
+  .display-show {
+    visibility : visible;
+    opacity : 1;
+}
+
+.slide-container {
+  width: 300vw;
+  transition: all 1s;
+}
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+.slide-box img {
+  width: 100%;
+} 
