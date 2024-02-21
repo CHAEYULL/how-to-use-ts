@@ -9,8 +9,10 @@ let submitBtn:HTMLElement | null = document.querySelector('form')
 let image1:HTMLElement | null = document.querySelector('#btn1')
 let image2:HTMLElement | null = document.querySelector('#btn2')
 let image3:HTMLElement | null = document.querySelector('#btn3')
-
-
+let imgContainer: HTMLElement | null = document.querySelector('.image-group')
+let nextBtn: HTMLElement | null = document.querySelector('#next')
+let backBtn:HTMLElement | null = document.querySelector('#back')
+let imgWrapper:HTMLElement | null = document.querySelector('.slide-container')
 
 
 
@@ -45,6 +47,54 @@ if (submitBtn instanceof HTMLElement){
                 alert('공백은 안돼.')
                 loginID.value == '';
                 loginPassword.value == '';
+            }
+        }
+    })
+}
+
+let currentTargetId: number = 0
+if (imgContainer instanceof HTMLElement){
+    imgContainer.addEventListener('click', function(e){
+        console.log(e.target)
+        console.log(currentTargetId)
+        if (e.target == image1){
+            currentTargetId = 0;
+            if ( imgWrapper instanceof HTMLElement){
+                imgWrapper.style.transform = `translateX(-${currentTargetId}00vw)`
+            }
+        }
+        if (e.target == image2){
+            currentTargetId = 1;
+            if ( imgWrapper instanceof HTMLElement){
+                imgWrapper.style.transform = `translateX(-${currentTargetId}00vw)`
+            }
+        }
+        if (e.target == image3){
+            currentTargetId = 2;
+            if ( imgWrapper instanceof HTMLElement){
+                imgWrapper.style.transform = `translateX(-${currentTargetId}00vw)`
+            }
+        }
+        if (e.target == nextBtn){
+            if ( imgWrapper instanceof HTMLElement){
+                if ( currentTargetId == 0){
+                currentTargetId++
+                imgWrapper.style.transform = `translateX(-${currentTargetId}00vw)`
+                } else if ( currentTargetId == 1) {
+                    currentTargetId++
+                    imgWrapper.style.transform = `translateX(-${currentTargetId}00vw)`    
+                }
+            } 
+        }
+        if (e.target == backBtn){
+            if ( imgWrapper instanceof HTMLElement){
+                if ( currentTargetId == 2){
+                currentTargetId--
+                imgWrapper.style.transform = `translateX(-${currentTargetId}00vw)`
+                } else if ( currentTargetId == 1){
+                    currentTargetId--
+                imgWrapper.style.transform = `translateX(-${currentTargetId}00vw)`
+                }
             }
         }
     })

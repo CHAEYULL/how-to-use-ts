@@ -10,6 +10,10 @@ var submitBtn = document.querySelector('form');
 var image1 = document.querySelector('#btn1');
 var image2 = document.querySelector('#btn2');
 var image3 = document.querySelector('#btn3');
+var imgContainer = document.querySelector('.image-group');
+var nextBtn = document.querySelector('#next');
+var backBtn = document.querySelector('#back');
+var imgWrapper = document.querySelector('.slide-container');
 if (navBtn instanceof HTMLElement) {
     navBtn.addEventListener('click', function () {
         if (navList instanceof HTMLElement) {
@@ -37,6 +41,55 @@ if (submitBtn instanceof HTMLElement) {
                 alert('공백은 안돼.');
                 loginID.value == '';
                 loginPassword.value == '';
+            }
+        }
+    });
+}
+var currentTargetId = 0;
+if (imgContainer instanceof HTMLElement) {
+    imgContainer.addEventListener('click', function (e) {
+        console.log(e.target);
+        console.log(currentTargetId);
+        if (e.target == image1) {
+            currentTargetId = 0;
+            if (imgWrapper instanceof HTMLElement) {
+                imgWrapper.style.transform = "translateX(-".concat(currentTargetId, "00vw)");
+            }
+        }
+        if (e.target == image2) {
+            currentTargetId = 1;
+            if (imgWrapper instanceof HTMLElement) {
+                imgWrapper.style.transform = "translateX(-".concat(currentTargetId, "00vw)");
+            }
+        }
+        if (e.target == image3) {
+            currentTargetId = 2;
+            if (imgWrapper instanceof HTMLElement) {
+                imgWrapper.style.transform = "translateX(-".concat(currentTargetId, "00vw)");
+            }
+        }
+        if (e.target == nextBtn) {
+            if (imgWrapper instanceof HTMLElement) {
+                if (currentTargetId == 0) {
+                    currentTargetId++;
+                    imgWrapper.style.transform = "translateX(-".concat(currentTargetId, "00vw)");
+                }
+                else if (currentTargetId == 1) {
+                    currentTargetId++;
+                    imgWrapper.style.transform = "translateX(-".concat(currentTargetId, "00vw)");
+                }
+            }
+        }
+        if (e.target == backBtn) {
+            if (imgWrapper instanceof HTMLElement) {
+                if (currentTargetId == 2) {
+                    currentTargetId--;
+                    imgWrapper.style.transform = "translateX(-".concat(currentTargetId, "00vw)");
+                }
+                else if (currentTargetId == 1) {
+                    currentTargetId--;
+                    imgWrapper.style.transform = "translateX(-".concat(currentTargetId, "00vw)");
+                }
             }
         }
     });
